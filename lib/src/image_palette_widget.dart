@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:palette_generator/palette_generator.dart';
 
+/// A Flutter widget that displays an image and a color palette based on the image.
 class ImagePalette extends StatefulWidget {
+  /// Creates a new instance of the [ImagePalette] widget.
+  ///
+  /// The [onValueChanged] callback is called whenever the user selects a color from the palette.
+  ///
+  /// The [image] parameter is an optional [Image] widget that will be used to generate the color palette.
   const ImagePalette({super.key, required this.onValueChanged, this.image});
 
+  /// A callback that is called whenever the user selects a color from the palette.
   final ValueChanged<Color> onValueChanged;
+
+  /// An optional [Image] widget that will be used to generate the color palette.
   final Image? image;
 
   @override
@@ -22,7 +31,7 @@ class _ImagePaletteState extends State<ImagePalette> {
     }
   }
 
-  // base color
+  /// A list of base colors that will be used in the color palette.
   List<Color> baseColor = [
     Colors.red,
     Colors.pink,
@@ -64,6 +73,7 @@ class _ImagePaletteState extends State<ImagePalette> {
     );
   }
 
+  /// Shows a color picker dialog that allows the user to select a color from the palette.
   showColorPicker() {
     showDialog(
       context: context,
@@ -107,6 +117,7 @@ class _ImagePaletteState extends State<ImagePalette> {
     );
   }
 
+  /// Generates a color palette from the provided [Image] widget.
   Future<void> genPaletteFromImage(Image? image) async {
     final paletteColor = await PaletteGenerator.fromImageProvider(
       image!.image,
