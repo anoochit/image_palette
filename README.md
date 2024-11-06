@@ -10,14 +10,14 @@ A Flutter package that allows you to generate a color palette from an image and 
 
 ## Installation
 
-1. Add the package to your `pubspec.yaml` file:
+Add the package to your `pubspec.yaml` file:
 
    ```yaml
    dependencies:
      image_palette: ^0.0.1
    ```
 
-2. Run `flutter pub get` to install the package.
+Run `flutter pub get` to install the package.
 
 ## Usage
 
