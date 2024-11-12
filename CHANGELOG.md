@@ -1,3 +1,4 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Base colors for the palette
+* Assign an image for addtional colors
